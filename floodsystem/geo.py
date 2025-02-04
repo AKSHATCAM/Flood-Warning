@@ -31,5 +31,12 @@ def stations_by_distance(stations, p):
 
 stations_list_final = stations_by_distance(stations, (52.2053, 0.1218))
 
+def stations_within_radius(stations, centre, r):
+    stations_within = []
+    for station in stations:
+        if haversine(station.coord, centre) <= r:
+            stations_within.append(station.name)
+    return stations_within
+
 
 
