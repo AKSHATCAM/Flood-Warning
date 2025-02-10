@@ -38,7 +38,7 @@ def stations_within_radius(stations, centre, r):
             stations_within.append(station.name)
     return stations_within
 
-def rives
+def rivers_with_station(stations):
 
 
 
