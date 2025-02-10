@@ -4,8 +4,8 @@ from floodsystem.geo import stations_by_river
 
 def run():
     stations = build_station_list()
-    list = rivers_by_station_number(stations, 9)
-    print(list)
+    List = rivers_by_station_number(stations, 9)
+    print(List)
 
 if __name__ == "__main__":
     print("*** Task 1E: CUED Part IA Flood Warning System ***")
