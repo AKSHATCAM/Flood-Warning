@@ -38,7 +38,27 @@ def stations_within_radius(stations, centre, r):
             stations_within.append(station.name)
     return stations_within
 
-#def rivers_with_station(stations):
+def rivers_with_station(stations):
+    """This is for Task 1D, implement a function that returns a list with the names of the rivers with a monitoring station, 
+    in alphabetical order"""
+    rivers_0 = set()
+    for station in stations:
+        rivers_0.add(station.river)
+    rivers = list(rivers_0)
+    rivers.sort()
+    return rivers
+
+def stations_by_river(stations):
+    rivers = {}
+    for station in stations:
+        if station.river in rivers.keys():
+            rivers[station.river] += [station]
+        elif station.river == None:
+            continue
+        else:
+            rivers[station.river]=[station]
+    return rivers
+
 
 
 
