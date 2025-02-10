@@ -1,0 +1,12 @@
+from floodsystem.stationdata import build_station_list
+from floodsystem.geo import rivers_by_station_number
+from floodsystem.geo import stations_by_river
+
+def run():
+    stations = build_station_list()
+    list = rivers_by_station_number(stations, 9)
+    print(list)
+
+if __name__ == "__main__":
+    print("*** Task 1E: CUED Part IA Flood Warning System ***")
+    run()
