@@ -4,7 +4,7 @@
 
 from floodsystem.stationdata import build_station_list
 
-def run():
+def runA():
     """Requirements for Task 1A"""
 
     # Build list of stations
@@ -21,5 +21,5 @@ def run():
 
 if __name__ == "__main__":
     print("*** Task 1A: CUED Part IA Flood Warning System ***")
-    run()
+    runA()
 

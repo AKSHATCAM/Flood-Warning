@@ -2,7 +2,7 @@ from floodsystem.stationdata import build_station_list
 from floodsystem.geo import rivers_with_station
 from floodsystem.geo import stations_by_river
 
-def run():
+def runD():
     stations = build_station_list()
     print("The number of rivers with at least one monitoring station is",len(rivers_with_station(stations)))
     print() #leave a space bewtween lines"
@@ -19,4 +19,4 @@ def run():
         print()
 if __name__ == "__main__":
     print("*** Task 1D: CUED Part IA Flood Warning System ***")
-    run()
+    runD()
