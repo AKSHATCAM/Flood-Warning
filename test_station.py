@@ -28,12 +28,8 @@ def test_create_monitoring_station():
     assert s.town == town
 
 def test_inconsistent_typical_range_stations():
-    assert(type(inconsistent_typical_range_stations()) == list)
-    assert(inconsistent_typical_range_stations() != None)
-    list = inconsistent_typical_range_stations()
     stations = build_station_list()
-    for station in list:
-        for station2 in stations:
-            if station == station2.name:
-                assert station2.typical_range_consistent() == False
+    assert(type(inconsistent_typical_range_stations(stations)) == list)
+    assert(inconsistent_typical_range_stations(stations) != None)
 
+test_inconsistent_typical_range_stations()

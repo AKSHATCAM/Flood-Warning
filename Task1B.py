@@ -41,7 +41,7 @@ def runB():
     for i in list_with_distances[-10:]:
         furthest.append((i[0],town_list[list_with_names.index(i[0])], i[1]))
 
-
+    print(closest)
     print(furthest)
     print(len(furthest))
 

@@ -5,13 +5,10 @@ from floodsystem.geo import stations_within_radius, stations_by_distance, rivers
 
 def test_stations_within_radius():
     stations = build_station_list()
-    assert len(stations_within_radius(stations, (52.2053, 0.1218), 10)) == 10
-    assert len(stations_within_radius(stations, (52.2053, 0.1218), 100)) == 100
     assert type(stations_within_radius(stations, (52.2053, 0.1218), 10)) == list
-    assert stations_within_radius(stations, (52.2053, 0.1218), 10) == ['Bin Brook', 'Cambridge Baits Bite', "Cambridge Byron's Pool",
-    'Cambridge Jesus Lock', 'Comberton', 'Dernford', 'Girton',
-    'Haslingfield Burnt Mill', 'Lode', 'Oakington', 'Stapleford']
+    assert sorted(stations_within_radius(stations, (52.2053, 0.1218), 10)) == ['Bin Brook', 'Cambridge Baits Bite', "Cambridge Byron's Pool", 'Cambridge Jesus Lock', 'Comberton', 'Dernford', 'Girton', 'Haslingfield Burnt Mill', 'Lode', 'Oakington', 'Stapleford']
     
+test_stations_within_radius()
 
 def test_stations_by_distance():
     stations = build_station_list()
