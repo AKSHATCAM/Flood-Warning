@@ -5,7 +5,7 @@
 for manipulating/modifying station data
 
 """
-
+from floodsystem.stationdata import build_station_list
 
 class MonitoringStation:
     """This class represents a river level monitoring station"""
@@ -44,14 +44,14 @@ class MonitoringStation:
             return False
         elif self.typical_range[0] > self.typical_range[1]:
             return False
-        else:
+        else:   
             return True
     
     def relative_water_level(self):
-        if self.latest_level == None or self.typical_range[0] > self.typical_range[1]:
+        if self.latest_level is None or not self.typical_range_consistent():
             return None
-        else:
-            return (self.latest_level - self.typical_range[0])/(self.typical_range[1]-self.typical_range[0])
+        low, high = self.typical_range
+        return (self.latest_level - low) / (high - low)
 
 def inconsistent_typical_range_stations(stations):
     inconsistent_stations = []
@@ -61,3 +61,6 @@ def inconsistent_typical_range_stations(stations):
     inconsistent_stations.sort()
     return inconsistent_stations
 
+staionnames = build_station_list()
+
+MonitoringStation.relative_water_level(staionnames[0])
