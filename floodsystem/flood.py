@@ -32,3 +32,6 @@ def stations_highest_rel_level(stations, N):
     full_list.sort(key=lambda x: x[1], reverse=True)
     station_list = [num[0] for num in full_list]
     return station_list[:N]
+
+def risk():
+    
