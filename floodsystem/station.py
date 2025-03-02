@@ -5,7 +5,7 @@
 for manipulating/modifying station data
 
 """
-from floodsystem.stationdata import build_station_list
+#from floodsystem.stationdata import build_station_list
 
 class MonitoringStation:
     """This class represents a river level monitoring station"""
@@ -61,6 +61,6 @@ def inconsistent_typical_range_stations(stations):
     inconsistent_stations.sort()
     return inconsistent_stations
 
-staionnames = build_station_list()
+#staionnames = build_station_list()
 
-MonitoringStation.relative_water_level(staionnames[0])
+#MonitoringStation.relative_water_level(staionnames[0])
