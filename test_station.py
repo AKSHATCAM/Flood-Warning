@@ -32,4 +32,4 @@ def test_inconsistent_typical_range_stations():
     assert(type(inconsistent_typical_range_stations(stations)) == list)
     assert(inconsistent_typical_range_stations(stations) != None)
 
-test_inconsistent_typical_range_stations()
+#test_inconsistent_typical_range_stations()
