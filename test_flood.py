@@ -13,7 +13,7 @@ def test_stations_level_over_threshold():
     update_water_levels(stations)
     tol_stations = stations_level_over_threshold(stations, 0.8)
 
-    #assert type(tol_stations[3][1]) == int
+    assert type(tol_stations[3][1]) == float
 
 def test_stations_highest_rel_level():
 
@@ -31,4 +31,4 @@ def test_risk():
     
     assert coeff <= 5
     assert coeff >= 0
-    #assert type(coeff) == int
+    assert type(coeff) == int
