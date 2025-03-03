@@ -17,7 +17,7 @@ def stations_level_over_threshold(stations, tol):
         level = station.relative_water_level()
         if station.typical_range_consistent() and level is not None:
             if level > tol:
-                full_list.append((station.name, level))
+                full_list.append((station, level))
     
     # Sort the list in descending order based on water level
     full_list.sort(key=lambda x: x[1], reverse=True)

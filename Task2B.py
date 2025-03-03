@@ -14,7 +14,7 @@ def run():
     tol_stations = stations_level_over_threshold(stations, tol)
 
     for station in tol_stations:
-        print(station[0], station[1])
+        print(station[0].name, station[1])
 
 if __name__ == "__main__":
     print("*** Task 2B: CUED Part IA Flood Warning System ***")

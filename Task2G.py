@@ -24,21 +24,17 @@ def run():
     risk_towns = []
     towns = {}
     for station in targets:
-        # Find the station in MonitoringStation datatype
-        for i in stations:
-            if i.name == station[0]:
-                target = i
-        risk_level = risk(target)
+        risk_level = risk(station[0])
         if risk_level == None:
             continue
-        town = target.town
+        town = station[0].town
         if town == None: # if the town name is None, use the station name instead
-            town = target.name
+            town = station[0].name
         if town not in towns.keys():
-            towns[town] = risk
+            towns[town] = risk_level
         else:
-            if towns[town] < risk:
-                towns[town] = risk
+            if towns[town] < risk_level:
+                towns[town] = risk_level
         
     # Add the dictionary elements into list, and sort the list by risk level
     for item in towns.keys():
@@ -48,7 +44,7 @@ def run():
     # Prepare for the output
     for item in risk_towns:
         if item[1] == 5:
-            print(str(item[0])+": severe")
+            print(item[0]+": severe")
         elif item[1] == 4:
             print(str(item[0])+": relatively high")
         elif item[1] == 3:
